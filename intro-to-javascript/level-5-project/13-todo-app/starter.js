@@ -39,13 +39,20 @@ function render() {
     del.className = "delete";
     del.textContent = "✕";
     del.setAttribute("aria-label", `Delete "${todo.text}"`);
+
+     // TODO 2: if the todo is done:
+    //         - tick the checkbox:  checkbox.checked = ...
+    //         - add the class "done" to the li
     checkbox.checked = todo.done;
     li.classList.toggle("done", todo.done);
+    
 
     li.append(checkbox, span, del);
     list.append(li);
   }
 
+   // TODO 3: count the todos that are NOT done and show "2 left"
+  //         Hint: todos.filter(t => ...).length
   const left = todos.filter(todo=>!(todo.done)).length;
   remainingEl.textContent = `${left} left`;
 
@@ -57,6 +64,16 @@ function render() {
 // ---------------------------------------------------------------
 
 // TODO 4: add a todo
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//    const text = input.value.trim();   ← .trim() removes spaces at both ends
+//    if text is empty → return (do nothing)
+//    todos.push({ id: nextId, text: text, done: false });
+//    nextId++;
+//    clear the input, then render()
+
+// });
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const text = input.value.trim();   
@@ -68,6 +85,22 @@ form.addEventListener("submit", (event) => {
   
 });
 
+
+// TODO 5: toggle or delete. ONE listener on the whole list.
+// list.addEventListener("click", (event) => {
+//   const li = event.target.closest("li"); // the <li> that contains whatever was clicked
+//   if (!li) return;
+//   const id = Number(li.dataset.id);        // data-* values are strings, so convert
+
+//    if event.target is the checkbox (event.target.type === "checkbox"):
+//      find the todo with this id and flip its done:  todo.done = !todo.done
+  
+//    if event.target has the class "delete" (event.target.classList.contains("delete")):
+//      remove it: todos = todos.filter(t => t.id !== id)
+  
+//    then render()
+
+// });
 list.addEventListener("click", (event) => {
   const li = event.target.closest("li");
   if (!li) return;
@@ -83,6 +116,11 @@ list.addEventListener("click", (event) => {
   render();
 
 });
+
+
+// TODO 6: "Clear completed" keeps only the todos that are NOT done
+//         todos = todos.filter(...)   then render()
+
 
 clearBtn.addEventListener("click", () => {
   todos = todos.filter((t) => !t.done);
