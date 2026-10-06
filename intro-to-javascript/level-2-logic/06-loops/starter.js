@@ -11,7 +11,7 @@ function sumTo(n) {
   }
   return total;
 }
-
+console.log(sumTo(9));
 
 // TODO 2: countdown(3) → "3 2 1 Liftoff!"
 //         Hint: start with let text = ""; loop i DOWN from n to 1 (i--);
@@ -23,7 +23,7 @@ function countdown(n) {
   }
   return text + "Liftoff!";
 }
-
+console.log(countdown(3));
 
 // TODO 3a: one number → "FizzBuzz" / "Fizz" / "Buzz" / or the number as text
 //          "divides by 3" means n % 3 === 0
@@ -53,7 +53,7 @@ function countVowels(word) {
   }
   return count;
 }
-
+console.log(countVowels("aisha"));
 
 // TODO 5: start at 1 and keep doubling (1, 2, 4, 8…) until you reach the
 //         limit or go past it. Return how many doublings that took.
@@ -68,10 +68,12 @@ let value = 1;
   }
   return steps;
 }
-
+console.log(doublingsUntil(100));
 
 function multiplicationTable(n) {
   for (let i = 1; i <= 10; i++) {
     console.log(`${n} x ${i} = ${n * i}`);
   }
 }
+
+console.log(multiplicationTable(9));

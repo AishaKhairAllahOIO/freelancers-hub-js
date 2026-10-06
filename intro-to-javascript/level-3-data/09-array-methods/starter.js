@@ -20,24 +20,35 @@ products.forEach((product) => console.log(`${product.name}: $${product.price}`))
 // TODO 2: const names = products.map(product => ...)
 //         → ["Notebook", "Backpack", ...]
 const names = products.map((product) => product.name);
+console.log(names);
 
 // TODO 3: const available = products.filter(product => ...)
 //         Keep a product when the function returns true.
 const available = products.filter((product) => product.inStock);
+console.log(available);
 
 // TODO 4: const cheapNames = names of products with price under 10
 //         products.filter(...).map(...)
 const cheapNames = products.filter((product) => product.price < 10).map((product) => product.name);
+console.log(cheapNames);
 
 // TODO 5: const backpack = products.find(product => ...)
 const backpack = products.find((product) => product.name === "Backpack");
+console.log(backpack);
 
 // TODO 6: const total = products.reduce((sum, product) => ..., 0)
 //         sum starts at 0 (the second argument). Return the new sum each time.
-const total = products.reduce((sum, product) => sum + product.price, 0);
+const total = products.reduce((sum, product) => sum + product.price, 0);//84
+console.log(total);
 
 // TODO 7: const stockValue = the total price of in-stock products only
 //         Hint: filter first, then reduce.
-const stockValue = products.filter((product) => product.inStock).reduce((sum, product) => sum + product.price, 0);
+// const stockValue = products.filter((product) => product.inStock).reduce((sum, product) => sum + product.price, 0);
+const stockValue = available.reduce((sum, product) => sum + product.price, 0);
+console.log(stockValue);
 
-const sortedNames = [...products].sort((a, b) => a.price - b.price).map((product) => product.name);
+const copiedProducts = [...products];
+copiedProducts.sort((a, b) => a.price - b.price);
+const sortedNames = copiedProducts.map((product) => product.name);
+// const sortedNames = [...products].sort((a, b) => a.price - b.price).map((product) => product.name);
+console.log(sortedNames);

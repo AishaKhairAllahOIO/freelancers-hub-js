@@ -9,14 +9,14 @@ console.log("fruits:", fruits);
 
 // TODO 1: const firstFruit = the item at position 0
 const firstFruit = fruits[0];
-
+console.log(firstFruit);
 // TODO 2: const lastFruit = the last item
 //         Don't write fruits[2]. Use fruits.length - 1 so it works for any size.
 const lastFruit = fruits[fruits.length - 1];
-
+console.log(lastFruit);
 // TODO 3: add "mango" to the end of fruits with .push()
 fruits.push("mango");
-
+console.log("fruits:", fruits);
 // TODO 4: return the biggest number in the array, using a loop
 //         Hint: let biggest = numbers[0];  (why not 0?)
 //         then for (const n of numbers) { if n is bigger, replace biggest }
@@ -29,7 +29,7 @@ let biggest = numbers[0];
   }
   return biggest;
 }
-
+console.log(largest([27,879,5868,999]));
 
 // TODO 5: return true if item is in the list, otherwise false, using a loop
 //         Hint: you can return true as soon as you find it.
@@ -42,7 +42,8 @@ function contains(list, item) {
   }
   return false;      
 }
-
+console.log(contains(["s",9,90,"sy"]),"k");
+console.log(contains(["s",9,90,"sy"]),"s");
 
 // TODO 6: return a NEW array in reverse order. Don't change the original.
 //         Hint: const result = []; loop from the last index DOWN to 0; push each item
@@ -54,7 +55,7 @@ function reverseCopy(list) {
   return result;
 
 }
-
+console.log(reverseCopy([8,9,0,4]));
 
 console.log("largest([3, 9, 2]) =", largest([3, 9, 2]));
 

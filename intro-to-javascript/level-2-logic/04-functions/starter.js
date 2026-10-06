@@ -57,3 +57,4 @@ console.log("result is", result);
 // receives undefined.
 
 const isEven = (n) => n % 2 === 0;
+console.log(isEven(4), isEven(7));

@@ -46,3 +46,4 @@ function canEnter(age, hasTicket) {
 // Try them out:
 console.log("letterGrade(85) =", letterGrade(85));
 console.log("ticketPrice(70) =", ticketPrice(70));
+console.log("letterGrade(120)=", letterGrade(120));

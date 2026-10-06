@@ -49,3 +49,5 @@ function countKeys(obj) {
 }
 
 console.log(describe(student));
+console.log(countKeys(student), countKeys(book));
+console.log(countKeys({ a: 1, b: 2, c: 3 }),countKeys({}));
